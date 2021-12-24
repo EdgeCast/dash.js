@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Dash.js Rocks</title>
+        <style>
+            video {
+                width: 640px;
+                height: 360px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <video id="videoPlayer" controls></video>
+        </div>
+        <script src="http://localhost:5040/dist/dash.all.min.js"></script>
+        <script>
+            (function(){
+                var url = "http://localhost:5040/test/ec-webrtc/assets/bbb_30fps.mpd";
+                //var url = "https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd";
+                var player = dashjs.MediaPlayer().create();
+                player.initialize(document.querySelector("#videoPlayer"), url, true);
+                /* Can be LOG_LEVEL_NONE, LOG_LEVEL_FATAL, LOG_LEVEL_ERROR, LOG_LEVEL_WARNING, LOG_LEVEL_INFO or LOG_LEVEL_DEBUG */
+                player.updateSettings({
+                'debug': {
+                   'logLevel': dashjs.Debug.LOG_LEVEL_INFO
+                }
+        });
+
+            })();
+        </script>
+    </body>
+</html>
+

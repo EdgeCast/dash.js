@@ -135,6 +135,12 @@ class DashConstants {
         this.PUBLISH_TIME = 'publishTime';
         this.ORIGINAL_PUBLISH_TIME = 'originalPublishTime';
         this.ORIGINAL_MPD_ID = 'mpdId';
+
+        //Author: Bhaskar Upadhyay
+        //Adding custom constants for webrtc 
+        this.WEBRTC_SERVER = 'webrtcServer';
+        this.WEBRTC_CONTENT_ID = 'webrtcContentId';
+
     }
 
     constructor () {

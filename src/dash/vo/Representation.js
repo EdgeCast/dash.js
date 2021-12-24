@@ -62,6 +62,12 @@ class Representation {
         this.maxPlayoutRate = NaN;
         this.availabilityTimeOffset = 0;
         this.availabilityTimeComplete = true;
+
+        // Author - Bhaskar Upadhyay
+        //Add webrtc properties
+        this.webrtcServer = null;
+        this.webrtcContentId = null;
+
     }
 
     hasInitialization() {

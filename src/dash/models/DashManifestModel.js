@@ -492,6 +492,16 @@ function DashManifestModel() {
                     voRepresentation.maxPlayoutRate = realRepresentation.maxPlayoutRate;
                 }
 
+                //Author - Bhaskar Upadhyay
+                //Add checks for webrtc tags
+                if (realRepresentation.hasOwnProperty(DashConstants.WEBRTC_SERVER)) {
+                    voRepresentation.webrtcServer = realRepresentation.webrtcServer;
+                }
+                if (realRepresentation.hasOwnProperty(DashConstants.WEBRTC_CONTENT_ID)) {
+                    voRepresentation.webrtcContentId = realRepresentation.webrtcContentId;
+                }
+                //
+
                 if (realRepresentation.hasOwnProperty(DashConstants.SEGMENT_BASE)) {
                     segmentInfo = realRepresentation.SegmentBase;
                     voRepresentation.segmentInfoType = DashConstants.SEGMENT_BASE;
@@ -623,7 +633,8 @@ function DashManifestModel() {
                 }
                 voAdaptationSet.index = i;
                 voAdaptationSet.period = voPeriod;
-
+                
+                logger.warn('voAdaptationSet.type = ' + voAdaptationSet.type);
                 if (getIsMuxed(realAdaptationSet)) {
                     voAdaptationSet.type = Constants.MUXED;
                 } else if (getIsAudio(realAdaptationSet)) {
