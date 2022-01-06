@@ -1762,7 +1762,8 @@ function MediaPlayer() {
         }
 
         source = urlOrManifest;
-
+        // Author: Kyriakos Zarifis
+        console.log("Attaching source")
         if (streamingInitialized || playbackInitialized) {
             _resetPlaybackControllers();
         }

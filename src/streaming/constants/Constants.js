@@ -46,6 +46,13 @@ class Constants {
         this.STREAM = 'stream';
 
         /**
+         *  @constant {string} WEBRTC WebRTC media type
+         *  @memberof Constants#
+         *  @static
+         */
+         this.WEBRTC = 'webrtc';
+
+        /**
          *  @constant {string} VIDEO Video media type
          *  @memberof Constants#
          *  @static

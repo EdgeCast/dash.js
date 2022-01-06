@@ -168,7 +168,12 @@ function ManifestLoader(config) {
 
                 try {
                     manifest = parser.parse(data);
+                    // Author: Kyriakos Zarifis
+                    console.log(data);
+                    console.log(manifest);
                 } catch (e) {
+                    // Author: Kyriakos Zarifis
+                    console.log(Errors.MANIFEST_LOADER_PARSING_FAILURE_ERROR_MESSAGE + `${url}`)
                     eventBus.trigger(Events.INTERNAL_MANIFEST_LOADED, {
                         manifest: null,
                         error: new DashJSError(

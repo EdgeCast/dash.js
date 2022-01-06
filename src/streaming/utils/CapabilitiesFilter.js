@@ -92,6 +92,7 @@ function CapabilitiesFilter() {
 
                         if (!supported) {
                             logger.warn(`AdaptationSet has been removed because of no supported Representation`);
+                            logger.warn(as)
                         }
 
                         return supported;

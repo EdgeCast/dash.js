@@ -44,7 +44,7 @@ import URLUtils from './utils/URLUtils';
 import BlacklistController from './controllers/BlacklistController';
 
 
-const MEDIA_TYPES = [Constants.VIDEO, Constants.AUDIO, Constants.TEXT, Constants.MUXED, Constants.IMAGE];
+const MEDIA_TYPES = [Constants.WEBRTC, Constants.VIDEO, Constants.AUDIO, Constants.TEXT, Constants.MUXED, Constants.IMAGE];
 
 
 function Stream(config) {
@@ -326,6 +326,15 @@ function Stream(config) {
         if (!allMediaForType || allMediaForType.length === 0) {
             logger.info('No ' + type + ' data.');
             return;
+        }
+
+        // Author: Kyriakos Zarifis --  delete
+        logger.info("Initializing for type: " + type);
+        if (type === Constants.WEBRTC) {        
+            logger.info('Detected WebRTC stream');
+            logger.info('--- WebRTC API calls go here ---');
+            //hasVideoTrack = true;
+            //hasAudioTrack = true;
         }
 
         if (type === Constants.VIDEO) {

@@ -161,6 +161,11 @@ function DashManifestModel() {
     function getIsImage(adaptation) {
         return getIsTypeOf(adaptation, Constants.IMAGE);
     }
+    //Author: Kyriakos Zarifis
+    //Adding WebRTC adaptation type check
+    function getIsWebrtc(adaptation) {
+        return getIsTypeOf(adaptation, Constants.WEBRTC);
+    }
 
     function getLanguageForAdaptation(adaptation) {
         let lang = '';
@@ -634,7 +639,9 @@ function DashManifestModel() {
                 voAdaptationSet.index = i;
                 voAdaptationSet.period = voPeriod;
                 
-                logger.warn('voAdaptationSet.type = ' + voAdaptationSet.type);
+                //logger.warn('voAdaptationSet.type = ' + voAdaptationSet.type);
+                //Author: Kyriakos Zarifis
+                //Adding check for webrtc adaptation stream type
                 if (getIsMuxed(realAdaptationSet)) {
                     voAdaptationSet.type = Constants.MUXED;
                 } else if (getIsAudio(realAdaptationSet)) {
@@ -645,6 +652,8 @@ function DashManifestModel() {
                     voAdaptationSet.type = Constants.TEXT;
                 } else if (getIsImage(realAdaptationSet)) {
                     voAdaptationSet.type = Constants.IMAGE;
+                } else if (getIsWebrtc(realAdaptationSet)) {
+                    voAdaptationSet.type = Constants.WEBRTC;
                 } else {
                     logger.warn('Unknown Adaptation stream type');
                 }
