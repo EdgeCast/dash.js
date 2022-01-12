@@ -13,7 +13,13 @@
         <div>
             <video id="videoPlayer" controls></video>
         </div>
+        <div>
+            <video id="phenixPlayer" width="1280" height="720" autoplay playsinline
+            style="display:none"></video>
+        </div>
+        <div id="changeText"> <p>This will count WebRTC period seconds.</p> </div>
         <script src="http://localhost:3000/dist/dash.all.min.js"></script>
+        <script src="http://localhost:3000/test/ec-webrtc/assets/phenix-web-sdk.js"></script>
         <script>
             (function(){
                 var url = "http://localhost:3000/test/ec-webrtc/assets/bbb_30fps.mpd";

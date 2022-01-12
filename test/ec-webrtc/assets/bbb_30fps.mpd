@@ -1,16 +1,18 @@
 <!-- <MPD mediaPresentationDuration="PT634.566S" minBufferTime="PT2.00S" profiles="urn:hbbtv:dash:profile:isoff-live:2012,urn:mpeg:dash:profile:isoff-live:2011" type="static" xmlns="urn:mpeg:dash:schema:mpd:2011" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:DASH:schema:MPD:2011 DASH-MPD.xsd"> -->
-<MPD mediaPresentationDuration="PT15S" minBufferTime="PT2.00S" profiles="urn:hbbtv:dash:profile:isoff-live:2012,urn:mpeg:dash:profile:isoff-live:2011" type="static" xmlns="urn:mpeg:dash:schema:mpd:2011" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:DASH:schema:MPD:2011 DASH-MPD.xsd">
+
+<MPD mediaPresentationDuration="PT12S" minBufferTime="PT2.00S" profiles="urn:hbbtv:dash:profile:isoff-live:2012,urn:mpeg:dash:profile:isoff-live:2011" type="static" xmlns="urn:mpeg:dash:schema:mpd:2011" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:DASH:schema:MPD:2011 DASH-MPD.xsd">
  <BaseURL>https://dash.akamaized.net/akamai/bbb_30fps/</BaseURL>
+
+<!--
+<Period duration="PT14.976000S" id="c-0-000-008"><AssetIdentifier schemeIdUri="urn:org:dashif:asset-id:2013" value="0fc610b7ab7b43dda5582df24ad89ae8"></AssetIdentifier><AdaptationSet audioSamplingRate="48000" contentType="audio" group="1" lang="en" mimeType="audio/mp4" segmentAlignment="true" startWithSAP="1"><Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"></Role><Representation bandwidth="128060" codecs="mp4a.40.5" id="0"><AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"></AudioChannelConfiguration><BaseURL>https://x-default-stgec.uplynk.com/ausw/slices/0fc/4f59ea65df184a2580ad8fc80d3eaa32/0fc610b7ab7b43dda5582df24ad89ae8/</BaseURL><SegmentTemplate duration="184320" initialization="https://x-default-stgec.uplynk.com/ausw/slices/0fc/4f59ea65df184a2580ad8fc80d3eaa32/0fc610b7ab7b43dda5582df24ad89ae8/TK_init.mp4?x=0&amp;si=0&amp;cdn=eci" media="TK_$Number%08d$.m4f?x=0&amp;si=0&amp;cdn=eci" startNumber="0" timescale="90000"></SegmentTemplate></Representation></AdaptationSet><AdaptationSet contentType="video" mimeType="video/mp4" segmentAlignment="true" startWithSAP="1"><InbandEventStream schemeIdUri="com.uplynk.asset.metadata"></InbandEventStream><Representation bandwidth="267026" codecs="avc1.42000d" frameRate="30" height="234" id="D" scanType="progressive" width="416"><BaseURL>https://x-default-stgec.uplynk.com/ausw/slices/0fc/4f59ea65df184a2580ad8fc80d3eaa32/0fc610b7ab7b43dda5582df24ad89ae8/</BaseURL><SegmentTemplate duration="184320" initialization="https://x-default-stgec.uplynk.com/ausw/slices/0fc/4f59ea65df184a2580ad8fc80d3eaa32/0fc610b7ab7b43dda5582df24ad89ae8/$RepresentationID$_init.mp4?x=0&amp;si=0&amp;cdn=eci" media="$RepresentationID$$Number%08d$.m4f?x=0&amp;si=0&amp;cdn=eci" startNumber="0" timescale="90000"></SegmentTemplate></Representation><Representation bandwidth="545566" codecs="avc1.4d001e" frameRate="30" height="396" id="E" scanType="progressive" width="704"><BaseURL>https://x-default-stgec.uplynk.com/ausw/slices/0fc/4f59ea65df184a2580ad8fc80d3eaa32/0fc610b7ab7b43dda5582df24ad89ae8/</BaseURL><SegmentTemplate duration="184320" initialization="https://x-default-stgec.uplynk.com/ausw/slices/0fc/4f59ea65df184a2580ad8fc80d3eaa32/0fc610b7ab7b43dda5582df24ad89ae8/$RepresentationID$_init.mp4?x=0&amp;si=0&amp;cdn=eci" media="$RepresentationID$$Number%08d$.m4f?x=0&amp;si=0&amp;cdn=eci" startNumber="0" timescale="90000"></SegmentTemplate></Representation><Representation bandwidth="1025538" codecs="avc1.4d001f" frameRate="30" height="504" id="F" scanType="progressive" width="896"><BaseURL>https://x-default-stgec.uplynk.com/ausw/slices/0fc/4f59ea65df184a2580ad8fc80d3eaa32/0fc610b7ab7b43dda5582df24ad89ae8/</BaseURL><SegmentTemplate duration="184320" initialization="https://x-default-stgec.uplynk.com/ausw/slices/0fc/4f59ea65df184a2580ad8fc80d3eaa32/0fc610b7ab7b43dda5582df24ad89ae8/$RepresentationID$_init.mp4?x=0&amp;si=0&amp;cdn=eci" media="$RepresentationID$$Number%08d$.m4f?x=0&amp;si=0&amp;cdn=eci" startNumber="0" timescale="90000"></SegmentTemplate></Representation><Representation bandwidth="2374720" codecs="avc1.4d001f" frameRate="30" height="720" id="G" scanType="progressive" width="1280"><BaseURL>https://x-default-stgec.uplynk.com/ausw/slices/0fc/4f59ea65df184a2580ad8fc80d3eaa32/0fc610b7ab7b43dda5582df24ad89ae8/</BaseURL><SegmentTemplate duration="184320" initialization="https://x-default-stgec.uplynk.com/ausw/slices/0fc/4f59ea65df184a2580ad8fc80d3eaa32/0fc610b7ab7b43dda5582df24ad89ae8/$RepresentationID$_init.mp4?x=0&amp;si=0&amp;cdn=eci" media="$RepresentationID$$Number%08d$.m4f?x=0&amp;si=0&amp;cdn=eci" startNumber="0" timescale="90000"></SegmentTemplate></Representation><Representation bandwidth="6029324" codecs="avc1.640028" frameRate="30" height="1080" id="H" scanType="progressive" width="1920"><BaseURL>https://x-default-stgec.uplynk.com/ausw/slices/0fc/4f59ea65df184a2580ad8fc80d3eaa32/0fc610b7ab7b43dda5582df24ad89ae8/</BaseURL><SegmentTemplate duration="184320" initialization="https://x-default-stgec.uplynk.com/ausw/slices/0fc/4f59ea65df184a2580ad8fc80d3eaa32/0fc610b7ab7b43dda5582df24ad89ae8/$RepresentationID$_init.mp4?x=0&amp;si=0&amp;cdn=eci" media="$RepresentationID$$Number%08d$.m4f?x=0&amp;si=0&amp;cdn=eci" startNumber="0" timescale="90000"></SegmentTemplate></Representation><Representation bandwidth="21609" codecs="avc1.42000a" frameRate="6" height="54" id="A" scanType="progressive" width="96"><BaseURL>https://x-default-stgec.uplynk.com/ausw/slices/0fc/4f59ea65df184a2580ad8fc80d3eaa32/0fc610b7ab7b43dda5582df24ad89ae8/</BaseURL><SegmentTemplate duration="184320" initialization="https://x-default-stgec.uplynk.com/ausw/slices/0fc/4f59ea65df184a2580ad8fc80d3eaa32/0fc610b7ab7b43dda5582df24ad89ae8/$RepresentationID$_init.mp4?x=0&amp;si=0&amp;cdn=eci" media="$RepresentationID$$Number%08d$.m4f?x=0&amp;si=0&amp;cdn=eci" startNumber="0" timescale="90000"></SegmentTemplate></Representation><Representation bandwidth="57932" codecs="avc1.42000b" frameRate="15" height="108" id="B" scanType="progressive" width="192"><BaseURL>https://x-default-stgec.uplynk.com/ausw/slices/0fc/4f59ea65df184a2580ad8fc80d3eaa32/0fc610b7ab7b43dda5582df24ad89ae8/</BaseURL><SegmentTemplate duration="184320" initialization="https://x-default-stgec.uplynk.com/ausw/slices/0fc/4f59ea65df184a2580ad8fc80d3eaa32/0fc610b7ab7b43dda5582df24ad89ae8/$RepresentationID$_init.mp4?x=0&amp;si=0&amp;cdn=eci" media="$RepresentationID$$Number%08d$.m4f?x=0&amp;si=0&amp;cdn=eci" startNumber="0" timescale="90000"></SegmentTemplate></Representation><Representation bandwidth="126593" codecs="avc1.42000c" frameRate="15" height="144" id="C" scanType="progressive" width="256"><BaseURL>https://x-default-stgec.uplynk.com/ausw/slices/0fc/4f59ea65df184a2580ad8fc80d3eaa32/0fc610b7ab7b43dda5582df24ad89ae8/</BaseURL><SegmentTemplate duration="184320" initialization="https://x-default-stgec.uplynk.com/ausw/slices/0fc/4f59ea65df184a2580ad8fc80d3eaa32/0fc610b7ab7b43dda5582df24ad89ae8/$RepresentationID$_init.mp4?x=0&amp;si=0&amp;cdn=eci" media="$RepresentationID$$Number%08d$.m4f?x=0&amp;si=0&amp;cdn=eci" startNumber="0" timescale="90000"></SegmentTemplate></Representation></AdaptationSet></Period>
+-->
 
  <Period>
   <AdaptationSet mimeType="video/mp4" contentType="video" subsegmentAlignment="true" subsegmentStartsWithSAP="1" par="16:9">
    <SegmentTemplate duration="120" timescale="30" media="$RepresentationID$/$RepresentationID$_$Number$.m4v" startNumber="1" initialization="$RepresentationID$/$RepresentationID$_0.m4v"/>
    <Representation id="bbb_30fps_1024x576_2500k" codecs="avc1.64001f" bandwidth="3134488" width="1024" height="576" frameRate="30" sar="1:1" scanType="progressive"/>
   </AdaptationSet>
-
   <AdaptationSet mimeType="audio/mp4" contentType="audio" subsegmentAlignment="true" subsegmentStartsWithSAP="1">
-   <Accessibility schemeIdUri="urn:tva:metadata:cs:AudioPurposeCS:2007" value="6"/>
-   <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
    <SegmentTemplate duration="192512" timescale="48000" media="$RepresentationID$/$RepresentationID$_$Number$.m4a" startNumber="1" initialization="$RepresentationID$/$RepresentationID$_0.m4a"/>
    <Representation id="bbb_a64k" codecs="mp4a.40.5" bandwidth="67071" audioSamplingRate="48000">
     <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
@@ -18,21 +20,22 @@
   </AdaptationSet>
  </Period>
 
- <Period start="PT5S" duration="PT5S">
+ <Period start="PT4S" duration="PT4S">
   <AdaptationSet contentType="webrtc" mimeType="application/webrtc">
     <Representation webrtcServer="https://demo.phenixrts.com" webrtcContnetId="demoChannel"/>
   </AdaptationSet>
- </Period>
- 
- <Period start="PT10S" duration="PT5S">
   <AdaptationSet mimeType="video/mp4" contentType="video" subsegmentAlignment="true" subsegmentStartsWithSAP="1" par="16:9">
    <SegmentTemplate duration="120" timescale="30" media="$RepresentationID$/$RepresentationID$_$Number$.m4v" startNumber="1" initialization="$RepresentationID$/$RepresentationID$_0.m4v"/>
    <Representation id="bbb_30fps_1024x576_2500k" codecs="avc1.64001f" bandwidth="3134488" width="1024" height="576" frameRate="30" sar="1:1" scanType="progressive"/>
   </AdaptationSet>
-
+</Period>
+ 
+ <Period start="P8S" duration="PT4S">
+  <AdaptationSet mimeType="video/mp4" contentType="video" subsegmentAlignment="true" subsegmentStartsWithSAP="1" par="16:9">
+   <SegmentTemplate duration="120" timescale="30" media="$RepresentationID$/$RepresentationID$_$Number$.m4v" startNumber="1" initialization="$RepresentationID$/$RepresentationID$_0.m4v"/>
+   <Representation id="bbb_30fps_1024x576_2500k" codecs="avc1.64001f" bandwidth="3134488" width="1024" height="576" frameRate="30" sar="1:1" scanType="progressive"/>
+  </AdaptationSet>
   <AdaptationSet mimeType="audio/mp4" contentType="audio" subsegmentAlignment="true" subsegmentStartsWithSAP="1">
-   <Accessibility schemeIdUri="urn:tva:metadata:cs:AudioPurposeCS:2007" value="6"/>
-   <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
    <SegmentTemplate duration="192512" timescale="48000" media="$RepresentationID$/$RepresentationID$_$Number$.m4a" startNumber="1" initialization="$RepresentationID$/$RepresentationID$_0.m4a"/>
    <Representation id="bbb_a64k" codecs="mp4a.40.5" bandwidth="67071" audioSamplingRate="48000">
     <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
@@ -40,5 +43,4 @@
   </AdaptationSet>
  </Period>
 
- 
 </MPD>
