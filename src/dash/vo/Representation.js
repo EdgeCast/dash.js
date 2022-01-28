@@ -67,6 +67,7 @@ class Representation {
         //Add webrtc properties
         this.webrtcServer = null;
         this.webrtcContentId = null;
+        this.webrtcToken = null;
 
     }
 

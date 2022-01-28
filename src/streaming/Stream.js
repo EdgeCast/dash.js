@@ -90,7 +90,8 @@ function Stream(config) {
         boxParser,
         debug,
         isEndedEventSignaled,
-        trackChangedEvents;
+        trackChangedEvents,
+        channel;
 
     /**
      * Setup the stream
@@ -271,6 +272,8 @@ function Stream(config) {
      */
     function _commonMediaInitialization(mediaSource, previousBufferSinks) {
         return new Promise((resolve, reject) => {
+
+            console.log("[commonMediaInitialization] - " + getStreamId());
             checkConfig();
 
             isUpdating = true;
@@ -317,6 +320,8 @@ function Stream(config) {
      * @private
      */
     function _initializeMediaForType(type, mediaSource) {
+        console.log("[_initializeMediaForType] - " + getStreamId());
+
         let allMediaForType = adapter.getAllMediaInfoForType(streamInfo, type);
         let embeddedMediaInfos = [];
 
@@ -328,80 +333,21 @@ function Stream(config) {
             return;
         }
 
+
         // Author: Kyriakos Zarifis
         logger.info("Initializing for type: " + type);
         if (type === Constants.WEBRTC) {        
             logger.info('Detected WebRTC stream');
             logger.info('--- WebRTC API calls go here ---');
 
-            // Get WebRTC period duration
-            var webRTCPeriodDuration = allMediaForType[0].streamInfo.duration;
-
-            // Toggle dash/phenix players on/off during webrtc period
-            var dashvidelem = document.getElementById("videoPlayer");
-            var phenixvidelem = document.getElementById("phenixPlayer");
-            dashvidelem.style.display = "none";
-            phenixvidelem.style.display = "block";
-            setTimeout( () => {
-                dashvidelem.style.display = "block";
-                phenixvidelem.style.display = "none";
-            }, webRTCPeriodDuration * 1000);
-
-            // Dummy example of doing something on the document in parallel
-            var text = [];
-            for (var i=1; i<=webRTCPeriodDuration; i++) {
-                text.push(i.toString())
-            }
-            text.push("WebRTC done.");
-            var counter = 0;
-            var elem = document.getElementById("changeText");
-            var inst = setInterval(countUp, 1000);
-            function countUp() {
-                elem.innerHTML = text[counter];
-                counter++;
-                if (counter >= text.length) {
-                    counter = 0;
-                    clearInterval(inst);
-                }
-            }
-
             // Phenix SDK code
-            var sdk = window['phenix-web-sdk']
-            var adminApiProxyClient = new sdk.net.AdminApiProxyClient();
-            //for publishing: https://vdms-demo.phenixrts.com/channel/publish/#mpl-c2
-            adminApiProxyClient.setBackendUri("https://vdms-demo.phenixrts.com/pcast");
-            var channelExpress = new sdk.express.ChannelExpress({adminApiProxyClient, disableConsoleLogging: false});
-            var videoElement = document.getElementById('phenixPlayer');
-           
-            channelExpress.joinChannel({
-                alias:"mpl-c2",
-                videoElement,
-            }, function joinChannelCallback(error, response) {
-                if (error) {
-                    console.log(error);
-                }
-            
-                if (response.status === 'room-not-found') {
-                    // Handle channel not found - Create a Channel Or Publish to a Channel
-                    console.log('room-not-found');
-                } else if (response.status !== 'ok') {
-                    // Handle error
-                    console.log('reponse:'+response)
-                }
-            
-                // Successfully joined channel
-                if (response.status === 'ok' && response.channelService) {
-                    // Do something with channelService
-                    console.log('success...');
-                }
-                console.log("joined channel");
-            }, function subscriberCallback(error, response) {
-                // Successfully subscribed to most recent channel presenter
-                if (response.status === 'ok' && response.mediaStream) {
-                    // Do something with mediaStream
-                    videoElement.mediaStream = response.mediaStream;
-                }
+            var phenix = window['phenix'];
+
+            channel = phenix.Channels.createChannel({
+                videoElement: videoModel.getElement(),
+                token: allMediaForType[0].webrtcToken
             });
+            return;
             // End Phenix SDK code            
         }
 
@@ -583,6 +529,11 @@ function Stream(config) {
      * @param {boolean} keepBuffers
      */
     function deactivate(keepBuffers) {
+        console.log("[_deactivate] - " + getStreamId());
+
+        if(channel != null){
+            channel.dispose();
+        }
         let ln = streamProcessors ? streamProcessors.length : 0;
         const errored = false;
         for (let i = 0; i < ln; i++) {

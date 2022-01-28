@@ -505,6 +505,9 @@ function DashManifestModel() {
                 if (realRepresentation.hasOwnProperty(DashConstants.WEBRTC_CONTENT_ID)) {
                     voRepresentation.webrtcContentId = realRepresentation.webrtcContentId;
                 }
+                if (realRepresentation.hasOwnProperty(DashConstants.WEBRTC_TOKEN)) {
+                    voRepresentation.webrtcToken = realRepresentation.webrtcToken;
+                }
                 //
 
                 if (realRepresentation.hasOwnProperty(DashConstants.SEGMENT_BASE)) {

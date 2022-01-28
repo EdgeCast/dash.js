@@ -266,6 +266,12 @@ function DashAdapter() {
                 convertVideoInfoToThumbnailInfo(media);
                 mediaArr.push(media);
                 media = null;
+            } else if (type === constants.WEBRTC) {
+                media.webrtcServer = manifest.Period[idx].AdaptationSet.Representation.webrtcServer;
+                media.webrtcContentId = manifest.Period[idx].AdaptationSet.Representation.webrtcContentId;
+                media.webrtcToken = manifest.Period[idx].AdaptationSet.Representation.webrtcToken;
+                
+                mediaArr.push(media);
             } else if (media) {
                 mediaArr.push(media);
             }

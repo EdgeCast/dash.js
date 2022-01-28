@@ -125,7 +125,7 @@ function PlaybackController() {
      * @private
      */
     function _initializeAfterStreamSwitch() {
-
+        play();
     }
 
     function getTimeToStreamEnd(sInfo = null) {
